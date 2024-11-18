@@ -1,7 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./AboutUs.css";
 
 const AboutUs = () => {
+  const [teamMembers, setTeamMembers] = useState([]);
+
+  // Fetch data from Random User API
+  useEffect(() => {
+    const fetchTeamMembers = async () => {
+      try {
+        const response = await fetch("https://randomuser.me/api/?results=3");
+        const data = await response.json();
+        setTeamMembers(data.results);
+      } catch (error) {
+        console.error("Error fetching team members:", error);
+      }
+    };
+
+    fetchTeamMembers();
+  }, []);
+
   return (
     <div id="about-us" className="about-wrapper">
       <div className="innerWidth paddings about-container">
@@ -29,21 +46,20 @@ const AboutUs = () => {
         <section className="about-section">
           <h3 className="section-title">Meet Our Team</h3>
           <div className="team-members">
-            <div className="team-member futuristic-card">
-              <img src="./team1.jpg" alt="John Doe" />
-              <h4>John Doe</h4>
-              <p>Real Estate Specialist</p>
-            </div>
-            <div className="team-member futuristic-card">
-              <img src="./team2.jpg" alt="Jane Smith" />
-              <h4>Rick Smith</h4>
-              <p>Property Consultant</p>
-            </div>
-            <div className="team-member futuristic-card">
-              <img src="./team3.jpg" alt="Mark Johnson" />
-              <h4>Mark Johnson</h4>
-              <p>Customer Support</p>
-            </div>
+            {teamMembers.map((member, index) => (
+              <div key={index} className="team-member futuristic-card">
+                <img
+                  src={member.picture.large}
+                  alt={`${member.name.first} ${member.name.last}`}
+                />
+                <h4>
+                  {member.name.first} {member.name.last}
+                </h4>
+                <p>
+                  {member.location.city}, {member.location.country}
+                </p>
+              </div>
+            ))}
           </div>
         </section>
 
