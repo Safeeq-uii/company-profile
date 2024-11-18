@@ -1,0 +1,91 @@
+/* Container utama untuk Contact */
+.c-container {
+  justify-content: space-between;
+}
+.c-container > div {
+  flex: 1;
+}
+.c-right {
+  width: 100%;
+}
+.c-left {
+  gap: 0.5rem;
+}
+.contactModes {
+  margin-top: 2rem;
+  gap: 1rem;
+}
+.contactModes .row {
+  gap: 1.5rem;
+}
+.mode {
+  width: 16rem;
+  padding: 1rem;
+  border: 0.8px solid rgba(128, 128, 128, 0.143);
+  border-radius: 5px;
+  gap: 1rem;
+  transition: all 300ms ease-in;
+}
+
+/* Penambahan jarak antara ikon dan teks */
+.mode .detail {
+  display: flex;
+  align-items: center; /* Ikon dan teks sejajar secara vertikal */
+  gap: 0.5rem; /* Tambahkan jarak antara ikon dan teks */
+}
+
+/* Ikon styling */
+.mode .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; /* Ukuran ikon */
+  height: 40px;
+  background-color: var(--lightBlue); /* Warna latar belakang untuk ikon */
+  border-radius: 50%; /* Membuat ikon menjadi bulat */
+  color: var(--blue); /* Warna ikon */
+}
+
+/* Tombol di dalam mode */
+.mode .button {
+  width: 100%;
+  background: var(--lightBlue);
+  color: var(--blue);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Hover efek */
+.mode:hover {
+  scale: 1.05;
+  box-shadow: var(--shadow);
+}
+
+.mode .button:hover {
+  background: var(--blue-gradient);
+  color: white;
+  scale: 1;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+  .c-container {
+    flex-direction: column;
+  }
+  .c-right {
+    justify-content: center;
+  }
+
+  .contactModes {
+    width: 100%;
+  }
+  .contactModes .row {
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem; /* Tambahkan jarak antar elemen */
+  }
+  .mode {
+    width: 100%; /* Pastikan mode mengambil lebar penuh di layar kecil */
+  }
+}

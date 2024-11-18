@@ -1,0 +1,18 @@
+.c-container {
+  justify-content: space-around;
+  gap: 1rem;
+}
+.c-container > img {
+  width: 9rem;
+}
+.video-container {
+  margin: 30px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-container video {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,131 @@
+/* About Us Wrapper */
+.about-wrapper {
+  margin-top: 50px;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #0d1117, #1d3557);
+  color: #ffffff;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Section Title */
+.about-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #a8dadc;
+  margin-bottom: 40px;
+}
+
+/* Section Content */
+.about-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.about-content {
+  flex: 1;
+  text-align: left;
+}
+
+.about-content h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #a8dadc;
+  margin-bottom: 10px;
+}
+
+.about-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #d9e3ea;
+}
+
+/* Images */
+.about-image {
+  flex: 1;
+  width: 100%;
+  max-width: 400px; /* Batasi ukuran maksimal gambar */
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Team Section */
+.team-members {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.team-member {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  flex: 1 1 250px;
+  max-width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.8);
+}
+
+.team-member img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #a8dadc;
+  margin-bottom: 10px;
+}
+
+.team-member h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+
+.team-member p {
+  font-size: 14px;
+  color: #d9e3ea;
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+  .about-section {
+    flex-direction: column; /* Tumpuk konten dan gambar secara vertikal */
+  }
+
+  .about-image {
+    margin-bottom: 20px;
+  }
+
+  .team-members {
+    gap: 15px; /* Kurangi jarak antar elemen pada layar kecil */
+  }
+}
+
+@media (max-width: 768px) {
+  .about-title {
+    font-size: 28px; /* Kurangi ukuran font pada layar kecil */
+  }
+
+  .about-section {
+    gap: 20px; /* Kurangi jarak antar elemen */
+  }
+
+  .team-member {
+    flex: 1 1 90%; /* Beri lebar penuh untuk kartu tim */
+    max-width: 100%; /* Hapus batasan lebar maksimal */
+  }
+}

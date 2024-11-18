@@ -1,0 +1,141 @@
+.r-container {
+  gap: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.r-head {
+  margin-bottom: 2rem;
+  text-align: center; /* Tambahan untuk merapikan judul */
+}
+
+.r-card {
+  gap: 0.6rem;
+  padding: 1rem;
+  border-radius: 10px;
+  max-width: max-content;
+  margin: auto;
+  transition: all 300ms ease-in;
+}
+
+.r-card > img {
+  width: 100%;
+  max-width: 15rem;
+  border-radius: 10px; /* Membuat gambar lebih halus */
+}
+
+.r-card > :nth-child(2) {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: orange; /* Warna harga */
+}
+
+.r-card > :nth-child(3) {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1d3557;
+}
+
+.r-card > :nth-child(4) {
+  font-size: 0.8rem;
+  color: #555;
+  width: 15rem;
+  text-align: center; /* Tambahan untuk merapikan teks */
+}
+
+.r-card:hover {
+  scale: 1.025;
+  cursor: pointer;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(136, 160, 255, 0.46) 217.91%
+  );
+  box-shadow: 0px 72px 49px -51px rgba(136, 160, 255, 0.21);
+}
+
+.swiper-horizontal {
+  overflow: visible;
+}
+
+.r-buttons {
+  position: absolute;
+  gap: 1rem;
+  top: -4rem;
+  right: 0;
+  display: flex;
+  justify-content: center; /* Posisi tombol di tengah */
+  align-items: center;
+}
+
+.r-buttons button {
+  font-size: 1.2rem;
+  padding: 0.2rem 0.8rem;
+  color: blue;
+  border: none;
+  border-radius: 5px;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.r-buttons > :nth-child(1) {
+  background-color: #eeeeff;
+}
+
+.r-buttons > :nth-child(2) {
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.25);
+}
+
+.r-buttons button:hover {
+  background-color: #ddeeff;
+  color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .r-container {
+    gap: 1.5rem;
+  }
+
+  .r-head {
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .r-card > img {
+    max-width: 12rem; /* Mengurangi ukuran gambar untuk layar kecil */
+  }
+
+  .r-card > :nth-child(4) {
+    width: 12rem; /* Menyesuaikan lebar deskripsi */
+  }
+
+  .r-buttons {
+    position: static;
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .r-card > img {
+    max-width: 10rem; /* Mengurangi ukuran gambar lebih jauh */
+  }
+
+  .r-card {
+    padding: 0.8rem;
+  }
+
+  .r-card > :nth-child(4) {
+    font-size: 0.7rem; /* Mengurangi ukuran font untuk deskripsi */
+  }
+
+  .r-buttons {
+    flex-direction: column; /* Tombol menjadi vertikal */
+    gap: 0.5rem;
+  }
+
+  .r-buttons button {
+    font-size: 1rem; /* Mengurangi ukuran tombol */
+    padding: 0.2rem 0.5rem;
+  }
+}
